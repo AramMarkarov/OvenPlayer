@@ -1,0 +1,100 @@
+:root {
+    color-scheme: light dark;
+    --bg-light: #ffffff;
+    --text-light: #000000;
+    --link-light: #1a0dab;
+    --header-bg-light: #f8f9fa;
+    --footer-bg-light: #f1f1f1;
+    --nav-bg-light: #e9ecef;
+    --nav-link-light: #007bff;
+    --nav-link-hover-light: #0056b3;
+
+    --bg-dark: #121212;
+    --text-dark: #ffffff;
+    --link-dark: #8ab4f8;
+    --header-bg-dark: #1f1f1f;
+    --footer-bg-dark: #1a1a1a;
+    --nav-bg-dark: #2c2c2c;
+    --nav-link-dark: #8ab4f8;
+    --nav-link-hover-dark: #4a90e2;
+}
+
+body {
+    background-color: light-dark(var(--bg-light), var(--bg-dark));
+    color: light-dark(var(--text-color-light), var(--text-dark));
+    font-family: Arial, sans-serif;
+    flex-direction: column;
+    margin: 0;
+    padding: 0;
+}
+
+a {
+    color: light-dark(var(--link-light), var(--link-dark));
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+.header {
+    background-color: light-dark(var(--header-bg-light), var(--header-bg-dark));
+    padding: 1rem;
+    text-align: center;
+}
+
+.Navbar {
+    background-color: light-dark(var(--nav-bg-light), var(--nav-bg-dark));
+    padding: 0.5rem;
+}
+
+.nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+.nav li {
+    margin: 0 1rem;
+}
+
+.title {
+    margin: 1rem;
+}
+
+.nav a {
+    color: light-dark(var(--nav-link-light), var(--nav-link-dark));
+    font-weight: bold;
+}
+
+.nav a:hover {
+    color: light-dark(var(--nav-link-hover-light), var(--nav-link-hover-dark));
+}
+
+.main {
+    padding: 2rem;
+    text-align: center;
+    flex: 1;
+}
+
+.Player {
+    max-width: 67%;
+    margin: auto;
+    margin-top: 50px
+}
+
+.nav .github {
+    margin-left: auto;
+}
+
+.github-logo {
+    width: 24px;
+    height: 24px;
+}
+
+@media (prefers-color-scheme: dark) {
+    .github-logo {
+        filter: invert(100%) sepia(100%) saturate(2%) hue-rotate(230deg) brightness(105%) contrast(101%);
+    }
+}
